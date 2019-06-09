@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.CsvSource
 
 class SortingTest {
 
-    private val sortingAlgorithms = arrayOf(InsertionSort(), SelectionSort())
+    private val sortingAlgorithms = arrayOf(InsertionSort<Int>(), SelectionSort<Int>())
 
     @ParameterizedTest
     @CsvSource(

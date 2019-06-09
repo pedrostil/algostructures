@@ -1,8 +1,8 @@
 package sort
 
-class InsertionSort : Sort {
+class InsertionSort<E : Comparable<E>> : AbstractSort<E> {
 
-    override fun sort(arr: Array<Int>) {
+    override fun sort(arr: Array<E>) {
         for (i in 1 until arr.size) {
             val cur = arr[i]
             var j = i - 1

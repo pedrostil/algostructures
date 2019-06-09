@@ -1,12 +1,10 @@
 package sort
 
-import kotlin.Int.Companion.MAX_VALUE
-
-class SelectionSort : Sort {
-    override fun sort(array: Array<Int>) {
+class SelectionSort<E : Comparable<E>> : AbstractSort<E> {
+    override fun sort(array: Array<E>) {
         for (i in 1 until array.size) {
-            var min = MAX_VALUE
-            var minIndex = -1
+            var min = array[i]
+            var minIndex = i
             for (j in i until array.size) {
                 if (array[j] < min) {
                     min = array[j]
@@ -19,7 +17,7 @@ class SelectionSort : Sort {
         }
     }
 
-    private fun swap(array : Array<Int>, i : Int, j : Int) {
+    private fun swap(array : Array<E>, i : Int, j : Int) {
         val tmp = array[i]
         array[i] = array[j]
         array[j] = tmp
