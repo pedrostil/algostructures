@@ -11,13 +11,13 @@ class SelectionSort<E : Comparable<E>> : AbstractSort<E> {
                     minIndex = j
                 }
             }
-            if (min < array[i-1]) {
-                swap(array, i-1, minIndex)
+            if (min < array[i - 1]) {
+                swap(array, i - 1, minIndex)
             }
         }
     }
 
-    private fun swap(array : Array<E>, i : Int, j : Int) {
+    private fun swap(array: Array<E>, i: Int, j: Int) {
         val tmp = array[i]
         array[i] = array[j]
         array[j] = tmp

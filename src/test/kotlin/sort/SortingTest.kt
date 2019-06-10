@@ -5,7 +5,12 @@ import org.junit.jupiter.params.provider.CsvSource
 
 class SortingTest {
 
-    private val sortingAlgorithms = arrayOf(InsertionSort<Int>(), SelectionSort<Int>())
+    private val sortingAlgorithms =
+        arrayOf(
+            InsertionSort<Int>(),
+            SelectionSort<Int>(),
+            MergeSort<Int>()
+        )
 
     @ParameterizedTest
     @CsvSource(
@@ -19,7 +24,6 @@ class SortingTest {
         for (sort in sortingAlgorithms) {
             val input = arr.split(" ").map { it.toInt() }.toTypedArray()
             sort.sort(input)
-//            println(sort::class.simpleName + " " + Arrays.toString(input))
             assert(isSorted(input))
         }
     }
@@ -30,6 +34,4 @@ class SortingTest {
         }
         return true
     }
-
-
 }
